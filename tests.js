@@ -5,11 +5,11 @@ var FlatPages = require('./main.js')
 var tests = {
 	// tests that creating the object completes without error
 	// but does not assert functionality
-	completion: function(){
+	completion: function(cb){
 		Pages = new FlatPages({
 			root: __dirname,
 			folder: 'pages'
-		});
+		}, cb);
 	},
 	// tests that both pages loaded
 	has_pages: function(){
@@ -33,9 +33,8 @@ var tests = {
 }
 
 // init Pages
-tests.completion();
-// run the rest of the tests after pages have loaded
-setTimeout(function(){
+tests.completion(function(){
+	// run tests once initialized
 	tests.has_pages();
 	tests.interfaces();
-}, 1000);
+});

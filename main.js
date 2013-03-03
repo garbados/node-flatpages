@@ -14,9 +14,9 @@ var Page = function(opts){
 	_self.html = markdown.markdown.toHTML(_self.body);
 }
 
-var Pages = function(opts){
+var Pages = function(opts, cb){
 	this._opts = opts;
-	this.init = function(opts){
+	this.init = function(opts, cb){
 		var _self = this;
 		this.root = path.join(
 			opts && opts.root || __dirname, 
@@ -33,37 +33,18 @@ var Pages = function(opts){
 					path: accessor
 				});
 				_self.files[accessor] = new_page;
+				next();
 			});
-			next();
 		});
+		this.walker.on('end', function(){
+			if(cb) cb();
+		})
 	}
-	this.init(opts);
+	this.init(opts, cb);
 }
 
-this.init = function(opts){
-	var _self = this;
-	this.root = path.join(
-		opts && opts.root || __dirname, 
-		opts && opts.folder || 'pages');
-	this.walker = walk.walk(this.root);
-	this.files = {};
-	this.walker.on('file', function(root, stat, next){
-		var accessor = path.join(root.replace(_self.root+path.sep,'')
-																 .replace(_self.root,''),
-														 stat.name);
-		fs.readFile(path.join(root, stat.name), function(err, data){
-			var new_page = new Page({
-				text: data.toString(),
-				path: accessor
-			});
-			_self.files[accessor] = new_page;
-		});
-		next();
-	});
-}
-
-Pages.prototype.reload = function(){
-	this.init(this._opts);
+Pages.prototype.reload = function(cb){
+	this.init(this._opts, cb);
 }
 
 Pages.prototype.get = function(path){
