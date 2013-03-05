@@ -4,9 +4,13 @@
     "main":"node-pages",
     "version": "0.0.1",
     "author": "Max Thayer <garbados@gmail.com>",
-    "keywords": [],
+    "license": "MIT",
+    "keywords": ["blog", "static", "flask"],
     "homepage": "https://github.com/garbados/node-pages",
-    "repository" : {"type": "git" , "url": "https://github.com/garbados/node-pages.git" },
+    "repository" : {
+        "type": "git", 
+        "url": "https://github.com/garbados/node-pages.git"
+    },
     "engines": {
         "node": ">= 0.8.17"
     },
@@ -14,5 +18,8 @@
         "js-yaml": "2.0.*",
         "markdown": "0.4.*",
         "walk": "2.2.*"
+    },
+    "scripts":{
+        "test": "node tests.js"
     }
 }
