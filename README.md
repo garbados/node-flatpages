@@ -1,6 +1,6 @@
-# Node-Pages: Flask-FlatPages for Node.js
+# Node-FlatPages: Flask-FlatPages for Node.js
 
-Like [Flask-FlatPages](http://pythonhosted.org/Flask-FlatPages/), Node-Pages recursively collects text files from a given directory and exposes them as Pages, made up of metadata stored as YAML, and a text body written in Markdown. For example:
+Like [Flask-FlatPages](http://pythonhosted.org/Flask-FlatPages/), Node-FlatPages recursively collects text files from a given directory and exposes them as Pages, made up of metadata stored as YAML, and a text body written in Markdown. For example:
 
 	tags:
 		- cats
@@ -28,7 +28,7 @@ Renders:
 
 ## Installation
 
-	npm install node-pages
+	npm install node-flatpages
 
 ## Usage
 
@@ -44,7 +44,7 @@ Renders:
 
 ### A note about parsing YAML and Markdown
 
-Node-Pages breaks pages at the first empty line, assuming everything above it is YAML, and everything below it is Markdown. Thus, if you want no YAML on your page, make its first line blank.
+Node-FlatPages breaks pages at the first empty line, assuming everything above it is YAML, and everything below it is Markdown. Thus, if you want no YAML on your page, make its first line blank.
 
 ## API
 
@@ -109,4 +109,4 @@ The Markdown text of your page rendered into HTML. Ex: `<h1>Cats on Roombas</h1>
 
 ## Tests
 
-	npm test node-pages
+	npm test node-flatpages
