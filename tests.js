@@ -13,7 +13,7 @@ var tests = {
 	},
 	// tests that both pages loaded
 	has_pages: function(){
-		assert.equal(Object.keys(Pages.files).length, 2);
+		assert.equal(Object.keys(Pages.files).length, 3);
 	},
 	// tests that Pages, and the files therein, have all the right properties
 	interfaces: function(){
@@ -25,16 +25,25 @@ var tests = {
 			});
 			assert.equal(typeof page.meta, typeof {});
 		}
-		// reload
-		Pages.reload();
 		// all
 		Pages.all();
-	}
+	},
+	tricky: function(){
+		var page = Pages.get('tricky');
+		assert.equal(page.meta, null);
+	},
+	reload: function(cb){
+		Pages.reload(cb);
+	},
 }
 
 // init Pages
-tests.completion(function(){
+tests.completion(function(Pages){
 	// run tests once initialized
 	tests.has_pages();
 	tests.interfaces();
+	tests.tricky();
+	tests.reload(function(){
+		console.log('No errors! Wahoo!');
+	});
 });
