@@ -15,9 +15,9 @@
         "node": ">= 0.8.17"
     },
     "dependencies": {
-        "js-yaml": "2.0.*",
+        "js-yaml": "2.0.3",
         "markdown": "0.4.0",
-        "walk": "2.2.*"
+        "walk": "2.2.1"
     },
     "scripts":{
         "test": "node tests.js"
