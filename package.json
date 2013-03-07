@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "js-yaml": "2.0.*",
-        "markdown": "0.4.*",
+        "markdown": "0.4.0",
         "walk": "2.2.*"
     },
     "scripts":{
