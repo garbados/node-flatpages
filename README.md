@@ -1,5 +1,7 @@
 # Node-FlatPages: Flask-FlatPages for Node.js
 
+<img src="https://travis-ci.org/garbados/node-pages.png" />
+
 Like [Flask-FlatPages](http://pythonhosted.org/Flask-FlatPages/), Node-FlatPages recursively collects text files from a given directory and exposes them as Pages, made up of metadata stored as YAML, and a text body written in Markdown. For example:
 
 	tags:
