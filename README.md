@@ -18,7 +18,7 @@ Like [Flask-FlatPages](http://pythonhosted.org/Flask-FlatPages/), Node-FlatPages
 Renders:
 
 	{
-		path: 'path/to/file/relative/to/project/root',
+		path: 'path/to/file/from/project/root',
 		meta: {
 			tags: ['cats', 'roombas', 'cats on roombas']
 		},
