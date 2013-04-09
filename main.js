@@ -6,20 +6,10 @@ var walk = require('walk')
 	, walker = walk.walk(path.join(__dirname, 'pages'));
 
 var Page = function(opts){
-	var lines = opts.text.split(/[\n\r]/)
-		, meta = []
-		, body = [];
-	for(var i = 0; i < lines.length; i++){
-		if(lines[i]) {
-			meta.push(lines[i]);
-		}else{
-			body = lines.slice(i);
-			body = body.join('\n');
-			meta = meta.join('\n');
-			break
-		}
-	}
-
+	opts.text = opts.text.replace(/(\r\n|\n|\r)/gm,"\n")
+	var split = opts.text.indexOf("\n\n")
+		, meta = opts.text.substring(0, split)
+		, body = opts.text.substring(split);
 	this.path = opts.path;
 	this.body = body;
 	this.html = markdown.markdown.toHTML(body);
