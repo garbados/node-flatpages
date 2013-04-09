@@ -6,7 +6,7 @@ var walk = require('walk')
 	, walker = walk.walk(path.join(__dirname, 'pages'));
 
 var Page = function(opts){
-	var lines = opts.text.split('\n')
+	var lines = opts.text.split(/[\n\r]/)
 		, meta = []
 		, body = [];
 	for(var i = 0; i < lines.length; i++){
