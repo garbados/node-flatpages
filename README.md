@@ -37,8 +37,7 @@ Renders:
 	var FlatPages = require('pages');
 
 	var Pages = new FlatPages({
-		root: __dirname, 	// folder above your pages directory
-		folder: 'pages', 	// name of the pages directory
+		folder: 'pages', 	// path to the pages directory
 		extension: 'md'		// file extension for pages you want to grab
 	}, function(loaded_ages){
 		loaded_pages.all() 	// returns an array of all found pages
