@@ -34,7 +34,7 @@ Renders:
 
 ## Usage
 
-	var FlatPages = require('pages');
+	var FlatPages = require('node-flatpages');
 
 	var Pages = new FlatPages({
 		folder: 'pages', 	// path to the pages directory
