@@ -2,7 +2,7 @@
   "name": "node-flatpages",
   "description": "Flask-FlatPages for Node.js",
   "main": "./main.js",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "author": "Max Thayer <garbados@gmail.com>",
   "license": "MIT",
   "keywords": [
