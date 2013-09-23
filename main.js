@@ -20,10 +20,8 @@ var Pages = function(opts, cb){
 	this._opts = opts;
 	this.init = function(opts, cb){
 		var _self = this;
-		_self.root = path.join(
-			opts && opts.root || __dirname, 
-			opts && opts.folder || 'pages');
-		_self.extension = opts && opts.extension || 'md';
+		_self.root = (opts && opts.folder) || 'pages';
+		_self.extension = (opts && opts.extension) || 'md';
 		var walker = walk.walk(this.root);
 		_self.files = {};
 

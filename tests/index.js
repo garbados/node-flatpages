@@ -1,4 +1,4 @@
-var FlatPages = require('./main.js')
+var FlatPages = require('../main')
 	, assert = require('assert')
 	, Pages;
 
@@ -7,7 +7,6 @@ var tests = {
 	// but does not assert functionality
 	completion: function(cb){
 		Pages = new FlatPages({
-			root: __dirname,
 			folder: 'pages'
 		}, cb);
 	},
