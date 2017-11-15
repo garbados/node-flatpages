@@ -1,8 +1,8 @@
 {
   "name": "flatpages",
   "description": "Flask-FlatPages for Node.js",
-  "main": "./main.js",
-  "version": "0.1.1",
+  "main": "./lib/index.js",
+  "version": "0.2.0",
   "author": "Diana Thayer <garbados@gmail.com>",
   "license": "GPL-3.0",
   "keywords": [
