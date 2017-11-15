@@ -7,9 +7,9 @@ Like [Flask-FlatPages](http://pythonhosted.org/Flask-FlatPages/), Node-FlatPages
 
 ```
 tags:
-	- cats
-	- roombas
-	- cats on roombas
+  - cats
+  - roombas
+  - cats on roombas
 
 # Cats on Roombas
 
@@ -24,11 +24,11 @@ Renders:
 
 ```
 {
-	meta: {
-		tags: ['cats', 'roombas', 'cats on roombas']
-	},
-	body: '# Cats on Roombas\n\nPlease, partake of them:\n\n...',
-	html: '<h1>Cats on Roombas</h1>...'
+  meta: {
+    tags: ['cats', 'roombas', 'cats on roombas']
+  },
+  body: '# Cats on Roombas\n\nPlease, partake of them:\n\n...',
+  html: '<h1>Cats on Roombas</h1>...'
 }
 ```
 
@@ -44,11 +44,11 @@ Install with [npm](https://www.npmjs.com/):
 var flatpages = require('flatpages');
 
 flatpages('PATH/TO/ENTRIES').then((entries) => {
-	console.log(entries['hello.md'].body)
-	// # Hello, World!
-	console.log(entries['hello.md'].html)
-	// <h1>Hello, World!</h1>
-	})
+  console.log(entries['hello.md'].body)
+  // # Hello, World!
+  console.log(entries['hello.md'].html)
+  // <h1>Hello, World!</h1>
+  })
 ```
 
 ### A note about parsing YAML and Markdown
@@ -65,13 +65,13 @@ The flatpages function returns a `Promise` that resolves to a mapping of the tra
 
 ```
 {
-	'entry.md': {
-		meta: {
-			title: 'Hello, world!'
-		},
-		body: '# Greetings!',
-		html: '<h1>Greetings!</h1>'
-	}
+  'entry.md': {
+    meta: {
+      title: 'Hello, world!'
+    },
+    body: '# Greetings!',
+    html: '<h1>Greetings!</h1>'
+  }
 }
 ```
 
