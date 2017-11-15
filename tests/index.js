@@ -1,48 +1,31 @@
-var FlatPages = require('../main')
-	, assert = require('assert')
-	, Pages;
+var flatpages = require('../lib')
+var tap = require('tap')
+var fsMock = require('mock-fs')
 
-var tests = {
-	// tests that creating the object completes without error
-	// but does not assert functionality
-	completion: function(cb){
-		Pages = new FlatPages({
-			folder: 'pages'
-		}, cb);
-	},
-	// tests that both pages loaded
-	has_pages: function(){
-		assert.equal(Object.keys(Pages.files).length, 3);
-	},
-	// tests that Pages, and the files therein, have all the right properties
-	interfaces: function(){
-		// get
-		for(path in Pages.files){
-			var page = Pages.get(path);
-			['path', 'body', 'html'].forEach(function(attr){
-				assert.equal(typeof page[attr], typeof '');
-			});
-			assert.equal(typeof page.meta, typeof {});
-		}
-		// all
-		Pages.all();
-	},
-	tricky: function(){
-		var page = Pages.get('tricky');
-		assert.equal(page.meta, null);
-	},
-	reload: function(cb){
-		Pages.reload(cb);
-	},
-}
+tap.test('flatpages', (group) => {
+  group.beforeEach((done) => {
+    fsMock({
+      'entries': {
+        'hello.md': '# wow',
+        'advanced.md': 'title: Hello, world!\n\n\n# omg wat\n'
+      }
+    })
+    done()
+  })
 
-// init Pages
-tests.completion(function(Pages){
-	// run tests once initialized
-	tests.has_pages();
-	tests.interfaces();
-	tests.tricky();
-	tests.reload(function(){
-		console.log('No errors! Wahoo!');
-	});
-});
+  group.afterEach((done) => {
+    fsMock.restore()
+    done()
+  })
+
+  group.test('verify processing', (test) => {
+    flatpages('entries')
+      .then((pages) => {
+        test.equal(pages['hello.md'].html, '<h1 id="wow">wow</h1>', 'Should process markdown correctly.')
+        test.equal(pages['advanced.md'].meta.title, 'Hello, world!', 'Should process YAML correctly.')
+        test.end()
+      })
+  })
+
+  group.end()
+})

@@ -1,29 +1,29 @@
 {
-  "name": "node-flatpages",
+  "name": "flatpages",
   "description": "Flask-FlatPages for Node.js",
   "main": "./main.js",
-  "version": "0.1.0",
-  "author": "Max Thayer <garbados@gmail.com>",
-  "license": "MIT",
+  "version": "0.1.1",
+  "author": "Diana Thayer <garbados@gmail.com>",
+  "license": "GPL-3.0",
   "keywords": [
     "blog",
-    "static",
-    "flask"
+    "static"
   ],
   "homepage": "https://github.com/garbados/node-pages",
   "repository": {
     "type": "git",
     "url": "https://github.com/garbados/node-pages.git"
   },
-  "engines": {
-    "node": ">= 0.8.17"
-  },
   "dependencies": {
-    "js-yaml": "2.0.3",
-    "markdown": "0.4.0",
-    "walk": "2.2.1"
+    "js-yaml": "^3.10.0",
+    "marked": "^0.3.6"
   },
   "scripts": {
-    "test": "node tests/index.js"
+    "test": "standard 'lib/index.js' 'test/index.js' && node tests/index.js"
+  },
+  "devDependencies": {
+    "mock-fs": "^4.4.2",
+    "standard": "^10.0.3",
+    "tap": "^10.7.3"
   }
 }
