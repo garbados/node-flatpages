@@ -1,5 +1,8 @@
 # flatpages
 
+[![Build Status](https://travis-ci.org/garbados/node-pages.svg?branch=master)](https://travis-ci.org/garbados/node-pages)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 Like [Flask-FlatPages](http://pythonhosted.org/Flask-FlatPages/), Node-FlatPages recursively collects text files from a given directory and exposes them as Pages, made up of metadata stored as YAML, and a text body written in Markdown. For example:
 
 ```
