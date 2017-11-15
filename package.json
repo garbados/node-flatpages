@@ -19,7 +19,7 @@
     "marked": "^0.3.6"
   },
   "scripts": {
-    "test": "standard 'lib/index.js' 'test/index.js' && node tests/index.js"
+    "test": "standard 'lib/index.js' 'test/index.js' && tap tests/index.js"
   },
   "devDependencies": {
     "mock-fs": "^4.4.2",
