@@ -1,7 +1,7 @@
 # flatpages
 
-[![Build Status](https://travis-ci.org/garbados/node-pages.svg?branch=master)](https://travis-ci.org/garbados/node-pages)
-[![Coverage Status](https://coveralls.io/repos/github/garbados/node-pages/badge.svg?branch=master)](https://coveralls.io/github/garbados/node-pages?branch=master)
+[![Build Status](https://travis-ci.org/garbados/node-flatpages.svg?branch=master)](https://travis-ci.org/garbados/node-flatpages)
+[![Coverage Status](https://coveralls.io/repos/github/garbados/node-flatpages/badge.svg?branch=master)](https://coveralls.io/github/garbados/node-flatpages?branch=master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 [markdown]: https://daringfireball.net/projects/markdown/
