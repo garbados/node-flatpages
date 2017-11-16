@@ -28,7 +28,7 @@ tap.test('flatpages', (group) => {
         test.equal(pages['hello.md'].html, '<h1 id="wow">wow</h1>', 'Should process markdown correctly.')
         test.equal(pages['hello.md'].meta, undefined)
         test.equal(pages['advanced.md'].meta.title, 'Hello, world!', 'Should process YAML correctly.')
-        test.equal(pages['wrong.png'], undefined)
+        test.equal(Object.keys(pages).indexOf('wrong.png'), -1)
         test.ok(pages['drafts']['shitpost.md'].meta.cw)
         test.end()
       })
