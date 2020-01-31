@@ -55,7 +55,7 @@ Install with [npm](https://www.npmjs.com/):
 
 ## Usage
 
-### `flatpages(string fileOrDirPath = '.', object options = {})`
+### async `flatpages(string fileOrDirPath = '.', object options = {})`
 
 `options`:
 - `split`: A string used to identify where to separate the YAML portion of the document from the Markdown portion.
