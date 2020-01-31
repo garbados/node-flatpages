@@ -15,15 +15,15 @@
     "url": "https://github.com/garbados/node-pages.git"
   },
   "dependencies": {
-    "js-yaml": "^3.12.0",
-    "marked": "^0.5.1"
+    "js-yaml": "^3.13.1",
+    "marked": "^0.8.0"
   },
   "scripts": {
     "test": "standard 'lib/index.js' 'test/index.js' && tap tests/index.js"
   },
   "devDependencies": {
-    "mock-fs": "^4.7.0",
-    "standard": "^12.0.1",
-    "tap": "^12.0.1"
+    "mock-fs": "^4.10.4",
+    "standard": "^14.3.1",
+    "tap": "^14.10.6"
   }
 }
