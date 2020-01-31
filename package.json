@@ -1,7 +1,7 @@
 {
   "name": "flatpages",
   "description": "Flask-FlatPages for Node.js",
-  "main": "./lib/index.js",
+  "main": "./lib.js",
   "version": "0.2.4",
   "author": "Diana Thayer <garbados@gmail.com>",
   "license": "GPL-3.0",
@@ -19,11 +19,13 @@
     "marked": "^0.8.0"
   },
   "scripts": {
-    "test": "standard 'lib/index.js' 'test/index.js' && tap tests/index.js"
+    "test": "standard && mocha",
+    "cov": "nyc npm test"
   },
   "devDependencies": {
+    "mocha": "^7.0.1",
     "mock-fs": "^4.10.4",
-    "standard": "^14.3.1",
-    "tap": "^14.10.6"
+    "nyc": "^15.0.0",
+    "standard": "^14.3.1"
   }
 }
