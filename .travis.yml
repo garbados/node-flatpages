@@ -5,8 +5,5 @@ node_js:
 cache:
   directories:
   - node_modules
-env:
-  global:
-    secure: sKH9sAEPKyhNknWddoPfqRYljYGkm6pEy5x2QcYnQ2kfIqXZO1iUaN7vi7/JknlLUdfHtC4EvvK02V9XcWv66xVOWZD7Z4ZG2PARugvMmZJcNwv1JHp94ucNh8gMlmnjkx1BAnVMV6uc+wgShOQKaguVejp5NRuMKC1stIq1DlY=
 after_success:
 - npx nyc npm test && npx nyc report --reporter=text-lcov | npx coveralls
